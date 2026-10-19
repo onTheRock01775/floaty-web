@@ -19,9 +19,9 @@ npm run dev
 
 ## ดาวน์โหลดและเวอร์ชัน
 
-ปุ่มดาวน์โหลดใช้ GitHub Releases ของ `onTheRock01775/floaty` และอ่าน stable release ล่าสุดจาก public GitHub API โดยไม่ใช้ token เมื่อ API ใช้ไม่ได้ ปุ่มยังลิงก์ไป `/releases/latest/download/Floaty-windows.zip` ได้ตามเดิม
+ปุ่มดาวน์โหลดใช้ GitHub Releases ของ `onTheRock01775/floaty` และอ่าน stable release ล่าสุดจาก public GitHub API โดยไม่ใช้ token เมื่อ API ใช้ไม่ได้ ปุ่มยังลิงก์ไป `/releases/latest/download/Floaty.exe` ได้ตามเดิม
 
-ไฟล์ที่แจกต้องใช้ชื่อ `Floaty-windows.zip` ตามระบบ updater ของแอป ตัวเลขเวอร์ชันและขนาดไฟล์บนหน้าเว็บอ่านจาก Release จริง ไม่ได้ตั้งให้เป็นเวอร์ชันที่ยังไม่เผยแพร่
+หน้าเว็บแจก `Floaty.exe` ไฟล์เดียว โดยมีตัวช่วยอัปเดตฝังภายใน ส่วน `Floaty-windows.zip` ยังคงไว้สำหรับระบบ updater ของแอปรุ่นเก่า ตัวเลขเวอร์ชันและขนาดไฟล์บนหน้าเว็บอ่านจาก Release จริง ไม่ได้ตั้งให้เป็นเวอร์ชันที่ยังไม่เผยแพร่
 
 ## เผยแพร่เว็บ
 

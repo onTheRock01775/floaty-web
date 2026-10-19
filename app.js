@@ -113,14 +113,14 @@ async function loadRelease() {
     if (!response.ok) return;
     const release = await response.json();
     if (release.draft || release.prerelease || !/^v?\d+\.\d+\.\d+$/.test(release.tag_name || '')) return;
-    const asset = Array.isArray(release.assets) && release.assets.find(item => item.name === 'Floaty-windows.zip' && item.state === 'uploaded');
+    const asset = Array.isArray(release.assets) && release.assets.find(item => item.name === 'Floaty.exe' && item.state === 'uploaded');
     if (!asset || !Number.isFinite(asset.size) || asset.size <= 0) return;
-    const expected = `https://github.com/onTheRock01775/floaty/releases/download/${encodeURIComponent(release.tag_name)}/Floaty-windows.zip`;
+    const expected = `https://github.com/onTheRock01775/floaty/releases/download/${encodeURIComponent(release.tag_name)}/Floaty.exe`;
     if (asset.browser_download_url !== expected) return;
     document.querySelectorAll('.download-asset').forEach(link => { link.href = expected; });
     document.querySelectorAll('[data-release-version]').forEach(element => { element.textContent = release.tag_name; });
     const size = new Intl.NumberFormat('en', { maximumFractionDigits: 1 }).format(asset.size / 1024 / 1024);
-    document.querySelectorAll('[data-release-meta]').forEach(element => { element.textContent = `${release.tag_name} · ${size} MB · ไฟล์ ZIP`; });
+    document.querySelectorAll('[data-release-meta]').forEach(element => { element.textContent = `${release.tag_name} · ${size} MB · ไฟล์ EXE เดียว`; });
   } catch {
     // A metadata failure must never disable the download button.
   } finally {
