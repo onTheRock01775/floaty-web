@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7fc">
+  <meta name="description" content="Floaty จัดหน้าต่างเกมให้ลงตัว วาง PiP ซ้อนจอ ปรับความโปร่งใส และสลับ Layout ได้ในคลิกเดียว ดาวน์โหลดสำหรับ Windows">
+  <title>Floaty — ทุกหน้าต่าง ในจังหวะของคุณ</title>
+  <link rel="icon" href="./assets/floaty.svg" type="image/svg+xml">
+  <link rel="preload" href="./assets/fonts/IBMPlexSansThaiLooped-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">ข้ามไปเนื้อหา</a>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></symbol>
+    <symbol id="i-windows" viewBox="0 0 24 24"><path d="m3 5 8-1v7H3zm10-1 8-1v8h-8zM3 13h8v7l-8-1zm10 0h8v8l-8-1z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="m9 3 10 10-3 1-3 4-3-3-6 6m3-10 4-3 1-3"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M14 4v16m0-8h7"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 20c-5 1-5-3-7-3m14 6v-4a3.5 3.5 0 0 0-1-3c3.3-.4 6.7-1.6 6.7-7.3A5.7 5.7 0 0 0 20.2 5a5.3 5.3 0 0 0-.1-4S18.9.6 16 2.5a13.6 13.6 0 0 0-7 0C6.1.6 4.9 1 4.9 1a5.3 5.3 0 0 0-.1 4A5.7 5.7 0 0 0 3.3 9c0 5.7 3.4 6.9 6.7 7.3a3.5 3.5 0 0 0-1 3V23" transform="translate(1 0) scale(.9)"/></symbol>
+    <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></symbol>
+  </defs></svg>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="เมนูหลัก">
+      <a class="brand" href="#" aria-label="Floaty หน้าหลัก"><img src="./assets/floaty.svg" width="35" height="35" alt=""><span>floaty<span class="brand-dot">.</span></span></a>
+      <div class="nav-links"><a href="#playground">ลองจัดหน้าต่าง</a><a href="#features">ฟีเจอร์</a><a href="#how-to">เริ่มต้นใช้งาน</a></div>
+      <a class="button button-dark nav-download" href="#download">ดาวน์โหลด <svg><use href="#i-arrow"/></svg></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="playground" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> A LITTLE MORE SPACE. A LOT MORE FLOW.</div>
+        <h1 id="hero-title">ทุกหน้าต่าง<br>อยู่ใน<span class="word-highlight">จังหวะ</span><br>ของคุณ<span class="title-dot">.</span></h1>
+        <p class="hero-description">จอหลักก็เต็มตา จอเล็กก็ไม่หายไปไหน<br>จัดหน้าต่างเกมให้ลอย ซ้อน และโปร่งใส<br class="desktop-br"> ในพื้นที่ที่คุณถนัด ด้วย Floaty</p>
+        <div class="hero-actions"><a class="button button-primary" href="#download">ดาวน์โหลด Floaty <svg><use href="#i-download"/></svg></a><a class="text-link" href="#features">ทำอะไรได้บ้าง <span>↘</span></a></div>
+        <div class="hero-footnote"><svg><use href="#i-windows"/></svg><span>สำหรับ Windows 64-bit</span><i></i><span>เข้าสู่ระบบด้วย Discord</span></div>
+      </div>
+
+      <div class="hero-visual" aria-label="ตัวอย่างการจัดหน้าต่างแบบโต้ตอบ">
+        <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+        <span class="visual-cross cross-one">+</span><span class="visual-cross cross-two">+</span>
+        <div class="floating-label pin-label"><span class="label-icon"><svg><use href="#i-pin"/></svg></span><div><strong>อยู่ในสายตาเสมอ</strong><small>PIN ON TOP</small></div><span class="tiny-dot"></span></div>
+        <div class="macbook">
+          <div class="macbook-lid"><div class="camera"></div>
+            <div class="demo-screen" data-layout="pip" id="demo-screen">
+              <div class="desktop-menu"><span class="desktop-menu-mark">✦</span><b>Floaty workspace</b><span class="desktop-clock">YOUR SPACE, YOUR RULES</span></div>
+              <div class="demo-window window-main"><div class="window-bar"><span class="traffic-lights"><i></i><i></i><i></i></span><span>MAIN WINDOW</span><span class="window-indicator"></span></div><div class="landscape landscape-main"><div class="landscape-sun"></div><div class="mountain mountain-back"></div><div class="mountain mountain-front"></div><div class="window-overlay"><span class="scene-eyebrow">ROOM TO FOCUS</span><strong>พื้นที่ของคุณ</strong><span>ทุกอย่างอยู่ในจังหวะที่ใช่</span></div><div class="game-dock"><i>✦</i><i>◈</i><i>⌘</i><i>☷</i><i>⚡</i><i>◎</i></div></div></div>
+              <div class="demo-window window-pip-one"><div class="window-bar"><span class="traffic-lights"><i></i><i></i><i></i></span><span>PiP 02</span><svg><use href="#i-pin"/></svg></div><div class="landscape landscape-alt"><div class="landscape-sun"></div><div class="mountain mountain-back"></div><div class="mountain mountain-front"></div><span class="pip-caption">STAY IN SIGHT</span></div></div>
+              <div class="demo-window window-pip-two"><div class="window-bar"><span class="traffic-lights"><i></i><i></i><i></i></span><span>PiP 03</span><svg><use href="#i-pin"/></svg></div><div class="landscape landscape-third"><div class="landscape-sun"></div><div class="mountain mountain-back"></div><div class="mountain mountain-front"></div><span class="pip-caption">KEEP YOUR FLOW</span></div></div>
+              <div class="demo-window window-four"><div class="window-bar"><span>WINDOW 04</span></div><div class="landscape landscape-four"><div class="mountain mountain-back"></div><div class="mountain mountain-front"></div></div></div>
+            </div>
+          </div>
+          <div class="macbook-base"><div class="macbook-notch"></div></div><div class="macbook-shadow"></div>
+        </div>
+        <div class="floating-label shortcut-label"><svg><use href="#i-keyboard"/></svg><span>สลับ Layout ในจังหวะเดียว</span><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd id="demo-key">1</kbd></div>
+        <div class="layout-control"><div class="layout-control-heading"><span class="mini-spark">✦</span> ลองเปลี่ยนพื้นที่ของคุณ <span class="demo-tag">INTERACTIVE DEMO</span></div>
+          <div class="layout-options" role="tablist" aria-label="ตัวอย่าง Layout">
+            <button class="layout-option is-active" id="layout-pip" role="tab" aria-selected="true" aria-controls="demo-panel" data-layout="pip"><span class="layout-glyph glyph-pip"><i></i><i></i></span>จอหลัก + PiP</button>
+            <button class="layout-option" id="layout-small" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-layout="small"><span class="layout-glyph glyph-small"><i></i><i></i></span>เล็ก โปร่ง</button>
+            <button class="layout-option" id="layout-split" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-layout="split"><span class="layout-glyph glyph-split"><i></i><i></i></span>แบ่งซ้ายขวา</button>
+            <button class="layout-option" id="layout-grid" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-layout="grid"><span class="layout-glyph glyph-grid"><i></i><i></i><i></i><i></i></span>Grid 2×2</button>
+          </div>
+          <p class="demo-caption" id="demo-panel" role="tabpanel" aria-labelledby="layout-pip" aria-live="polite">จอหลักเต็มพื้นที่ พร้อม PiP ลอยอยู่ด้านขวา</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="capability-strip"><div class="container capability-items"><span><svg><use href="#i-pin"/></svg> PIN ไว้ด้านบน</span><span><svg><use href="#i-layout"/></svg> Layout ในคลิกเดียว</span><span><svg><use href="#i-spark"/></svg> โปร่งใสได้ดั่งใจ</span><span><svg><use href="#i-keyboard"/></svg> ควบคุมด้วย Hotkeys</span></div></div>
+
+    <section class="features section container" id="features" aria-labelledby="features-title">
+      <div class="section-heading reveal"><div><div class="eyebrow muted">LESS WINDOW JUGGLING. MORE YOU.</div><h2 id="features-title">พื้นที่เท่าเดิม<br>แต่<span>เป็นไปได้มากกว่า</span></h2></div><p>เก็บทุกจอที่ต้องใช้ไว้ใกล้กัน<br>แล้วกลับไปโฟกัสกับสิ่งที่อยู่ตรงหน้า</p></div>
+      <div class="feature-grid">
+        <article class="feature-card feature-pin reveal"><div class="feature-top"><span class="feature-icon"><svg><use href="#i-pin"/></svg></span><span class="feature-number">01 / STAY ON TOP</span></div><h3>ลอยอยู่ตรงที่คุณต้องการ</h3><p>PIN หน้าต่างเกมหรือจอ PiP ไว้ด้านบน<br>สลับไปทำอย่างอื่น ก็ยังเห็นจอที่สำคัญ</p>
+          <div class="pin-playground" data-pinned="true"><div class="mini-app"><div class="mini-app-line"></div><div class="mini-app-line"></div><div class="mini-app-line short"></div><div class="mini-app-grid"><i></i><i></i><i></i></div></div><div class="mini-pip"><div class="mini-pip-bar"><span></span><span></span></div><div class="mini-pip-mountain"></div><span class="mini-pip-label">ALWAYS IN SIGHT</span></div><button class="pin-toggle" type="button" aria-pressed="true"><svg><use href="#i-pin"/></svg><span>PIN เปิดอยู่</span><i></i></button></div><small class="interaction-hint">ลองกดปุ่ม PIN เพื่อดูตัวอย่าง</small>
+        </article>
+        <article class="feature-card feature-opacity reveal"><div class="feature-top"><span class="feature-icon"><svg><use href="#i-spark"/></svg></span><span class="feature-number">02 / MAKE ROOM</span></div><h3>เห็นมากขึ้น บังน้อยลง</h3><p>ปรับความโปร่งใสของหน้าต่าง<br>ให้จอหลักและจอเล็กอยู่ร่วมกันพอดี</p><div class="opacity-playground"><span class="under-text">keep<br>your flow.</span><div class="opacity-window"><span class="opacity-window-dots">● ● ●</span><svg viewBox="0 0 160 110" aria-hidden="true"><path d="m0 110 68-81 60 81z" fill="#ac9cec"/><path d="m40 110 69-63 51 63z" fill="#d9cff8"/><circle cx="126" cy="26" r="12" fill="#f5e9cb"/></svg></div></div><label class="range-label" for="opacity-range"><span>ความโปร่งใส</span><output for="opacity-range" id="opacity-value">75%</output></label><input id="opacity-range" type="range" min="20" max="100" value="75" aria-describedby="opacity-hint"><small id="opacity-hint" class="interaction-hint">เลื่อนเพื่อทดลองปรับความทึบ</small></article>
+        <article class="feature-card feature-keys reveal"><div class="feature-top"><span class="feature-icon"><svg><use href="#i-keyboard"/></svg></span><span class="feature-number">03 / ONE SHORTCUT</span></div><h3>จังหวะดี ไม่ต้องคลิกเยอะ</h3><p>เรียก Layout หรือ PIN หน้าต่าง<br>ด้วยปุ่มลัดที่คุ้นมือ แล้วเล่นต่อได้เลย</p><div class="keyboard-demo"><div class="key-combo"><kbd>Ctrl</kbd><span>+</span><kbd>Alt</kbd><span>+</span><kbd class="key-accent">P</kbd></div><span class="keyboard-caption"><span class="status-dot"></span> PIN หน้าต่างปัจจุบัน</span><div class="shortcut-row"><span>เรียก Layout แรก</span><kbd>Ctrl + Alt + 1</kbd></div><div class="shortcut-row"><span>คืนค่าหน้าต่าง</span><kbd>Ctrl + Alt + R</kbd></div></div></article>
+      </div>
+    </section>
+
+    <section class="getting-started section container" id="how-to" aria-labelledby="how-title"><div class="section-heading reveal"><div><div class="eyebrow muted">A FEW CLICKS TO YOUR FLOW.</div><h2 id="how-title">พร้อมในไม่กี่ขั้นตอน<span class="title-dot">.</span></h2></div><a class="text-link" href="#download">เริ่มกันเลย <svg><use href="#i-arrow"/></svg></a></div><div class="steps-grid"><article class="step reveal"><span class="step-number">01</span><h3>ดาวน์โหลด</h3><p>เลือกไฟล์ Floaty-windows.zip<br>จากเวอร์ชันล่าสุดบน GitHub</p></article><article class="step reveal"><span class="step-number">02</span><h3>แตกไฟล์ แล้วเปิดแอป</h3><p>เก็บ Floaty.exe และ FloatyUpdater.exe<br>ไว้ในโฟลเดอร์เดียวกัน</p></article><article class="step reveal"><span class="step-number">03</span><h3>เชื่อมต่อ Discord</h3><p>เข้าสู่ระบบ รอผู้ดูแลอนุมัติสิทธิ์<br>แล้วเริ่มจัดพื้นที่ในแบบของคุณ</p></article></div></section>
+
+    <section class="download-section container reveal" id="download" aria-labelledby="download-title"><div class="download-decor" aria-hidden="true"><span></span><span></span><span></span></div><div class="download-copy"><div class="eyebrow"><span class="status-dot"></span> YOUR NEXT WINDOW STARTS HERE.</div><h2 id="download-title">จัดพื้นที่ใหม่<br>แล้วไปต่อให้<span>ลื่นกว่าเดิม.</span></h2><p>ให้ Floaty ดูแลตำแหน่งหน้าต่าง<br>คุณดูแลจังหวะของคุณก็พอ</p><div class="download-platform"><svg><use href="#i-windows"/></svg> Windows 10 / 11 · 64-bit</div></div><div class="download-card"><img src="./assets/floaty.svg" alt="" width="58" height="58"><div class="download-card-heading"><h3>Floaty for Windows</h3><span class="release-badge" data-release-version>Stable release</span></div><p>พื้นที่ของคุณ พร้อมให้จัดใหม่แล้ว</p><a class="button button-primary download-asset" href="https://github.com/onTheRock01775/floaty/releases/latest/download/Floaty-windows.zip">ดาวน์โหลดสำหรับ Windows <svg><use href="#i-download"/></svg></a><div class="download-meta" data-release-meta>ไฟล์ ZIP · ดาวน์โหลดผ่าน GitHub Releases</div><div class="download-card-divider"></div><div class="download-check"><svg><use href="#i-check"/></svg> มีระบบตรวจอัปเดตภายในแอป</div><a class="release-link" href="https://github.com/onTheRock01775/floaty/releases/latest" target="_blank" rel="noopener noreferrer">ดูรายละเอียดเวอร์ชันล่าสุด <svg><use href="#i-arrow"/></svg></a></div></section>
+
+    <section class="faq section container" aria-labelledby="faq-title"><div class="faq-heading reveal"><div class="eyebrow muted">GOOD TO KNOW.</div><h2 id="faq-title">ก่อนเริ่มใช้งาน</h2><p>คำตอบสั้น ๆ ที่อาจกำลังหาอยู่</p></div><div class="faq-list reveal"><details><summary>Floaty ใช้บน macOS ได้ไหม?<span class="faq-plus"></span></summary><div class="faq-content"><p>ตัวโปรแกรมรองรับ Windows 64-bit ภาพ MacBook บนเว็บเป็นภาพจำลองสำหรับแสดงวิธีจัด Layout เท่านั้น</p></div></details><details><summary>ต้องใช้บัญชีอะไรในการเข้าสู่ระบบ?<span class="faq-plus"></span></summary><div class="faq-content"><p>ใช้บัญชี Discord เพื่อเข้าสู่ระบบ และรอผู้ดูแลอนุมัติการใช้งาน เมนูและฟีเจอร์ที่เห็นจะขึ้นอยู่กับสิทธิ์ของบัญชีคุณ</p></div></details><details><summary>เปิดแอปแล้วแจ้งว่ายังไม่ได้ตั้งค่า Login?<span class="faq-plus"></span></summary><div class="faq-content"><p>รุ่นเริ่มต้นอาจต้องใช้ไฟล์ตั้งค่าจากผู้ดูแล ให้ขอไฟล์ auth_config.json แล้ววางไว้ข้าง Floaty.exe จากนั้นปิดและเปิดโปรแกรมอีกครั้ง</p></div></details><details><summary>อัปเดตเวอร์ชันใหม่ได้อย่างไร?<span class="faq-plus"></span></summary><div class="faq-content"><p>กดปุ่มตรวจอัปเดตในแอป เมื่อพบรุ่นใหม่สามารถอ่านรายละเอียด ดาวน์โหลด และเลือกติดตั้งเมื่อพร้อม แอปจะคืนค่าหน้าต่างเกมก่อนปิดเพื่อติดตั้ง</p></div></details><details><summary>ถ้าต้องการคืนหน้าต่างเป็นเหมือนเดิมล่ะ?<span class="faq-plus"></span></summary><div class="faq-content"><p>ใช้ปุ่มคืนค่าทั้งหมดในแอป หรือปุ่มลัด Ctrl + Alt + R เพื่อคืนหน้าต่างที่จัดการอยู่กลับเป็นแบบเดิม</p></div></details></div></section>
+  </main>
+
+  <footer class="footer container"><a class="brand" href="#"><img src="./assets/floaty.svg" width="30" height="30" alt=""><span>floaty<span class="brand-dot">.</span></span></a><span class="footer-tagline">YOUR GAME. YOUR SPACE.</span><a class="github-link" href="https://github.com/onTheRock01775/floaty" target="_blank" rel="noopener noreferrer"><svg><use href="#i-github"/></svg> GitHub <span>↗</span></a><span class="copyright">© <span id="year">2026</span> Floaty</span></footer>
+</body>
+</html>

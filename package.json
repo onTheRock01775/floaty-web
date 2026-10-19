@@ -1,0 +1,8 @@
+{
+  "name": "floaty-download-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Floaty download page with an interactive window-layout preview",
+  "scripts": {"dev": "node server.mjs", "start": "node server.mjs", "check": "node --check app.js && node --check server.mjs"}
+}
